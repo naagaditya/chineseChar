@@ -114,6 +114,7 @@
         function shuffle() {
             selectedChar = chars[getRandomInt(chars.length)];
             document.getElementById('chinese-char').innerHTML = selectedChar.chinese;
+	    document.getElementById('chinese-char').setAttribute('href','https://www.trainchinese.com/v2/wordDetails.php?rAp=0&tcLanguage=en&searchWord='+selectedChar.chinese)
             document.getElementById('result').innerHTML = '';
             document.getElementById('pinyin').innerHTML = '';
         };
@@ -127,7 +128,7 @@
 </head>
 
 <body style="padding: 16px; font-size: 60px;">
-    <div id="chinese-char"></div>
+    <a id="chinese-char"></a>
     <div id="pinyin"></div>
     <div id="result"></div>
     <div>
