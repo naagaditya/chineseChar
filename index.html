@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chinese Char</title>
+    <script type="text/javascript">
+        function getRandomInt(max) {
+          return Math.floor(Math.random() * max);
+        };
+        const chars = [
+            {chinese: '的', pinyin:  'de',  eng: 'grammatical particle marking possession'},
+            {chinese: '一', pinyin:  'yī',  eng: 'one'},
+            {chinese: '是', pinyin:  'shì', eng: 'to be'},
+            {chinese: '不', pinyin:  'bù',  eng: 'not, negative'},
+            {chinese: '了', pinyin:  'le',  eng: 'verb particle marking past tense, completed action, change in condition.'},
+            {chinese: '人', pinyin:  'rén', eng: 'person'},
+            {chinese: '我', pinyin:  'wǒ',  eng: 'I'},
+            {chinese: '在', pinyin:  'zài', eng: 'at, located at'},
+            {chinese: '有', pinyin:  'yǒu', eng: 'have, there is'},
+            {chinese: '他', pinyin:  'tā',  eng: 'he'},
+            {chinese:'这', pinyin:'zhè', eng:'   this'},
+            {chinese:'中', pinyin:'zhōng', eng:' middle'},
+            {chinese:'大', pinyin:'dà', eng:'    big'},
+            {chinese:'来', pinyin:'lái', eng:'   come'},
+            {chinese:'上', pinyin:'shàng', eng:' above, on, over/last, previous'},
+            {chinese:'国', pinyin:'guó', eng:'   country'},
+            {chinese:'个', pinyin:'gè', eng:'    general quantifier'},
+            {chinese:'到', pinyin:'dào', eng:'   to, towards, until, arrive'},
+            {chinese:'说', pinyin:'shuō', eng:'  speak, say'},
+            {chinese:'们', pinyin:'men', eng:'   pluralize nouns referring to people'},
+            {chinese:'为', pinyin:'wèi', eng:'   in order to, for the purpose of…'},
+            {chinese:'子', pinyin:'zǐ', eng:'    child'},
+            {chinese:'和', pinyin:'hé', eng:'    together, with'},
+            {chinese:'你', pinyin:'nǐ', eng:'    you'},
+            {chinese:'地', pinyin:'dì', eng:'    earth, ground, place'},
+            {chinese:'出', pinyin:'chū', eng:'   go out, come out'},
+            {chinese:'道', pinyin:'dào', eng:'   way, path, way'},
+            {chinese:'也', pinyin:'yě', eng:'    also, as well'},
+            {chinese:'时', pinyin:'shí', eng:'   time period, season'},
+            {chinese:'年', pinyin:'nián', eng:'  year'},
+            {chinese:'得', pinyin:'de', eng:'    to have to / adverbial particle'},
+            {chinese:'就', pinyin:'jiù', eng:'   just, simply, right away'},
+            {chinese:'那', pinyin:'nà', eng:'    that'},
+            {chinese:'要', pinyin:'yào', eng:'   want, will do, need, important'},
+            {chinese:'下', pinyin:'xià', eng:'   below, under, down / next'},
+            {chinese:'以', pinyin:'yǐ', eng:'    because of, in order to / according to'},
+            {chinese:'生', pinyin:'shēng', eng:' give birth, life'},
+            {chinese:'会', pinyin:'huì', eng:'   can, able, meet, party, society'},
+            {chinese:'自', pinyin:'zì', eng:'    from, self'},
+            {chinese:'着', pinyin:'zhe', eng:'   verb particle marking a progressive aspect (e.g. -ing)'},
+            {chinese:'去', pinyin:'qù', eng:'    go, leave, depart'},
+            {chinese:'之', pinyin:'zhī', eng:'   subordinator, go, leave for'},
+            {chinese:'过', pinyin:'guò', eng:'   pass, cross, exceed'},
+            {chinese:'家', pinyin:'jiā', eng:'   home, family'},
+            {chinese:'学', pinyin:'xué', eng:'   study, learn'},
+            {chinese:'对', pinyin:'duì', eng:'   correct, mutual, pair'},
+            {chinese:'可', pinyin:'kě', eng:'    ~able, may, can'},
+            {chinese:'她', pinyin:'tā', eng:'    she'},
+            {chinese:'里', pinyin:'lǐ', eng:'    neighborhood, half kilometer'},
+            {chinese:'后', pinyin:'hòu', eng:'   queen'},
+            {chinese:'小', pinyin:'xiǎo', eng:'  small'},
+            {chinese:'么', pinyin:'me', eng:'/mo interrogative suffix'},
+            {chinese:'心', pinyin:'xīn', eng:'   heart'},
+            {chinese:'多', pinyin:'duō', eng:'   many, much, more'},
+            {chinese:'天', pinyin:'tiān', eng:'  sky, heaven, god, day'},
+            {chinese:'而', pinyin:'ér', eng:'    and, furthermore'},
+            {chinese:'能', pinyin:'néng', eng:'  can, be able'},
+            {chinese:'好', pinyin:'hǎo', eng:'   good'},
+            {chinese:'都', pinyin:'dōu', eng:'   all'},
+            {chinese:'然', pinyin:'rán', eng:'   correct, so, like that'},
+            {chinese:'沒', pinyin:'méi', eng:'   haven’t, there isn’t, no'},
+            {chinese:'日', pinyin:'rì', eng:'    sun'},
+            {chinese:'于', pinyin:'yú', eng:'    in, at, for, to, from, by, than'},
+            {chinese:'起', pinyin:'qǐ', eng:'    rise, start'},
+            {chinese:'还', pinyin:'hái', eng:'   still, yet'},
+            {chinese:'发', pinyin:'fā', eng:'    deliver, develop, expand'},
+            {chinese:'成', pinyin:'chéng', eng:' accomplish, succeed / to become'},
+            {chinese:'事', pinyin:'shì', eng:'   matter, thing, event, accident'},
+            {chinese:'只', pinyin:'zhǐ', eng:'   only, just'},
+            {chinese:'作', pinyin:'zuò', eng:'   do, make'},
+            {chinese:'当', pinyin:'dāng', eng:'  serve as, act as'},
+            {chinese:'想', pinyin:'xiǎng', eng:' think, feel, want'},
+            {chinese:'看', pinyin:'kàn', eng:'   see, look at'},
+            {chinese:'文', pinyin:'wén', eng:'   language, literature'},
+            {chinese:'无', pinyin:'wú', eng:'    without, have not'},
+            {chinese:'开', pinyin:'kāi', eng:'   open'},
+            {chinese:'手', pinyin:'shǒu', eng:'  hand'},
+            {chinese:'十', pinyin:'shí', eng:'   ten'},
+            {chinese:'用', pinyin:'yòng', eng:'  use'},
+            {chinese:'主', pinyin:'zhǔ', eng:'   lord, master, live'},
+            {chinese:'行', pinyin:'xíng', eng:'  go, OK'},
+            {chinese:'方', pinyin:'fāng', eng:'  side'},
+            {chinese:'又', pinyin:'yòu', eng:'   again, both… and…'},
+            {chinese:'如', pinyin:'rú', eng:'    like, as, as if'},
+            {chinese:'前', pinyin:'qián', eng:'  in front, previous, first, former'},
+            {chinese:'所', pinyin:'suǒ', eng:'   place'},
+            {chinese:'本', pinyin:'běn', eng:'   basis, origin, edition'},
+            {chinese:'见', pinyin:'jiàn', eng:'  appear to be, meet with'},
+            {chinese:'经', pinyin:'jīng', eng:'  longitude'},
+            {chinese:'头', pinyin:'tóu', eng:'   head, top, first'},
+            {chinese:'面', pinyin:'miàn', eng:'  face, surface'},
+            {chinese:'公', pinyin:'gōng', eng:'  public, official'},
+            {chinese:'同', pinyin:'tóng', eng:'  same'},
+            {chinese:'三', pinyin:'sān', eng:'   three'},
+            {chinese:'已', pinyin:'yǐ', eng:'    stop, end'},
+            {chinese:'老', pinyin:'lǎo', eng:'   old'},
+            {chinese:'从', pinyin:'cóng', eng:'  from, through'},
+            {chinese:'动', pinyin:'dòng', eng:'  move'},
+            {chinese:'两', pinyin:'liǎng', eng:' two'},
+            {chinese:'长', pinyin:'cháng', eng:' long, length'},
+        ];
+        let selectedChar;
+        function shuffle() {
+            selectedChar = chars[getRandomInt(chars.length)];
+            document.getElementById('chinese-char').innerHTML = selectedChar.chinese;
+            document.getElementById('result').innerHTML = '';
+            document.getElementById('pinyin').innerHTML = '';
+        };
+        function show() {
+            document.getElementById('chinese-char').innerHTML = selectedChar.chinese;
+            document.getElementById('result').innerHTML = selectedChar.eng;
+            document.getElementById('pinyin').innerHTML = selectedChar.pinyin;
+        };
+        
+    </script>
+</head>
+
+<body style="padding: 16px; font-size: 60px;">
+    <div id="chinese-char"></div>
+    <div id="pinyin"></div>
+    <div id="result"></div>
+    <div>
+        <button id="shuffle" onclick="shuffle()">Shuffle</button>
+        <button id="show" onclick="show()">show</button>
+    </div>
+</body>
+</html>
