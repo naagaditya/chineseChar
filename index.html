@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Chinese Char</title>
+    <title>Chinese Char</title>
     <script type="text/javascript">
         function getRandomInt(max) {
           return Math.floor(Math.random() * max);
@@ -109,12 +109,18 @@
             {chinese:'动', pinyin:'dòng', eng:'  move'},
             {chinese:'两', pinyin:'liǎng', eng:' two'},
             {chinese:'长', pinyin:'cháng', eng:' long, length'},
+            {chinese:'怕', pinyin:'pà', eng:' be afraid of, fear'},
+            {chinese:'故', pinyin:'gù', eng:' old, past'},
+            {chinese:'跟', pinyin:'gēn', eng:' and'},
+            {chinese:'讲', pinyin:'jiǎng', eng:' tell'},
+            {chinese:'鬼', pinyin:'guǐ', eng:' ghost'},
+
         ];
         let selectedChar;
         function shuffle() {
             selectedChar = chars[getRandomInt(chars.length)];
             document.getElementById('chinese-char').innerHTML = selectedChar.chinese;
-	    document.getElementById('chinese-char').setAttribute('href','https://www.trainchinese.com/v2/wordDetails.php?rAp=0&tcLanguage=en&searchWord='+selectedChar.chinese)
+        document.getElementById('chinese-char').setAttribute('href','https://www.trainchinese.com/v2/wordDetails.php?rAp=0&tcLanguage=en&searchWord='+selectedChar.chinese)
             document.getElementById('result').innerHTML = '';
             document.getElementById('pinyin').innerHTML = '';
         };
@@ -123,17 +129,17 @@
             document.getElementById('result').innerHTML = selectedChar.eng;
             document.getElementById('pinyin').innerHTML = selectedChar.pinyin;
         };
-        
     </script>
 </head>
 
-<body style="padding: 16px; font-size: 60px;">
-    <a id="chinese-char" style="text-decoration: none;"></a>
-    <div id="pinyin"></div>
-    <div id="result"></div>
+<body style="padding: 16px;">
+    <a style="font-size: 100px;text-decoration: none;" id="chinese-char"></a>
+    <div style="padding: 8px; font-size: 32px;" id="pinyin"></div>
+    <div style="padding: 8px; font-size: 32px;" id="result"></div>
     <div>
-        <button id="shuffle" onclick="shuffle()">Shuffle</button>
-        <button id="show" onclick="show()">show</button>
+        <button style="padding: 8px; margin: 8px; font-size: 24px;" id="shuffle" onclick="shuffle()">Shuffle</button>
+        <button style="padding: 8px; margin: 8px; font-size: 24px;" id="show" onclick="show()">show</button>
     </div>
+    <script type="text/javascript">shuffle()</script>
 </body>
 </html>
